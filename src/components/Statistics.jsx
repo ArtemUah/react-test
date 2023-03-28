@@ -1,20 +1,21 @@
-import { StatisticsList } from "./Statitstics-list"
-import PropTypes from 'prop-types'
 
-
-export const Statistics = ({ stats }) => {
-    return (<section className="statistics">
-  <h2 className="title">Upload stats</h2>
-        <ul className="stat-list">
-            <StatisticsList stats={stats} />
-  </ul>
-</section>)
-}
-
-Statistics.propTypes = {
-    stats: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string,
-        label: PropTypes.string,
-        percentage: PropTypes.number,
-    }))
+export const Statistic = ({good, neutral, bad, total, positivePercentage }) => {
+    console.log(positivePercentage);
+    console.log(total);
+        return (
+              <>
+        {/* <h2>Please leave feedback</h2>
+    <ul onClick={this.changeStat}>
+            <li><button>Good</button></li>
+            <li><button>Neutral</button></li>
+            <li><button>Bad</button></li>
+    </ul> */}
+                <h3>Statistics</h3>
+                <p>Good: { good}</p>
+            <p>Neutral: {neutral} </p>
+                <p>Bad: {bad} </p>
+                <p>Total: {total} </p>
+            <p>Posivite: {positivePercentage ? positivePercentage : '0'}% </p>
+            </>
+        )
 }
