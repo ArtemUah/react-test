@@ -1,5 +1,6 @@
 import { Statistic } from "./Statistics";
 import React, {Component} from "react";
+import { Section } from "./Section";
 
 
 export class App extends Component {
@@ -41,7 +42,9 @@ export class App extends Component {
     const positiveFeedback = this.countPositiveFeedbackPercentage()
     return (
       <div>
+        <Section title='Statistics'>
         <Statistic good={ good} neutral={neutral} bad={bad} total={totalFeedback} positivePercentage={positiveFeedback}  />
+        </Section>
       </div>)
  }
 };
